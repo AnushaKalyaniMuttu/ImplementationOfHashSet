@@ -1,0 +1,38 @@
+Set is an interface in Collections with implementation classes like HashSet, LinkedHashSet and TreeSet
+
+How HashSet works internally in Java?
+
+HashSet hs=new HashSet();----------------------public HashSet(){
+                                                map=new HashMap();
+                                                }
+
+Boolean canAdd=hs.add("geek");   --------------public boolean add("greek");
+                                                {
+                                                  return map.put("greek",PRESENT)==null; ----return null;
+                                        
+Boolean canAdd1=hs.add("greekForGreek");---------public boolean add("greekForGreek");
+                                                {
+                                                  return map.put("greekForGreek",PRESENT)==null; ----return null;
+Boolean canAdd2=h2.add("geek");------------------public boolean add("greek");
+                                                {
+                                                  return map.put("greek",PRESENT)==null; ----return PRESENT;
+
+
+------------------------------------------------------------------------
+public class HashSet
+{
+    private transient HashMap map;
+
+    private static final Object PRESENT = new Object();
+    
+   
+    public HashSet() {
+        map = new HashMap<>();
+    }
+
+
+    public boolean add(E e) {
+        return map.put(e, PRESENT)==null;
+    }
+ 
+}
